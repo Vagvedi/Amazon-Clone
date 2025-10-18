@@ -1,53 +1,110 @@
-# Getting Started with Create React App
+# Amazon Clone (React + Node.js)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple Amazon-like front-end built with React. This repository contains the React app and basic client-side state management (Context API). It's intended for learning and demo purposes.
 
-## Available Scripts
+## What this project includes
 
-In the project directory, you can run:
+- React (Create React App)
+- Material UI icons
+- React Router for navigation
+- React Context API for shopping cart state
+- Simple components: Header, Home, Product, Checkout
+- GitHub Pages deployment configuration (via `gh-pages`)
 
-### `npm start`
+## Quick setup (development)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Install dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```powershell
+npm install
+```
 
-### `npm test`
+2. Start the dev server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```powershell
+npm start
+```
 
-### `npm run build`
+Open http://localhost:3000 in your browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Build for production
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```powershell
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The production-ready files will be in the `build/` folder.
 
-### `npm run eject`
+## Deploy to GitHub Pages
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project uses the `gh-pages` package to publish the `build` output to the `gh-pages` branch.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. In `package.json` set the `homepage` field to your site URL, for example:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```json
+"homepage": "https://<your-github-username>.github.io/<your-repo-name>"
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Commit and push your repository to GitHub. Make sure the repository name in the URL matches the repo you pushed.
 
-## Learn More
+3. Run the deploy script (PowerShell / Windows):
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```powershell
+npm run deploy
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This runs `npm run build` then publishes the `build` directory to the `gh-pages` branch.
 
-### Code Splitting
+Notes:
+- If you use client-side routing (BrowserRouter) refreshing nested routes on GitHub Pages can 404. To avoid this, either:
+	- Use `HashRouter` from `react-router-dom` (recommended for GitHub Pages), or
+	- Configure a server to redirect requests to `index.html` (not supported by raw GitHub Pages).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Changing the router to HashRouter (recommended for GitHub Pages)
+
+If you want the app to work with routing without extra server config, replace BrowserRouter with HashRouter.
+
+In `src/App.js`:
+
+```diff
+-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
++import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+```
+
+Then rebuild and redeploy.
+
+## Troubleshooting
+
+- If `npm run deploy` fails, ensure `gh-pages` is installed (devDependency). You can install it with:
+
+```powershell
+npm install --save-dev gh-pages
+```
+
+- If you see vulnerabilities after installing packages, run:
+
+```powershell
+npm audit
+npm audit fix
+# or if you accept breaking changes
+npm audit fix --force
+```
+
+## Next steps / Improvements
+
+- Add user authentication (Firebase) for sign-in flows
+- Connect to a backend (Node/Express + MongoDB) to persist orders
+- Add payment integration (Stripe)
+- Improve styling and responsive layout
+
+---
+
+If you want, I can:
+- switch the app to `HashRouter` automatically and update files,
+- run `npm run deploy` after you confirm the correct `homepage` URL,
+- or create a GitHub Actions workflow to auto-deploy on push.
+
+Tell me which of these you'd like next.
 
 ### Analyzing the Bundle Size
 
