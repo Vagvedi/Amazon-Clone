@@ -26,7 +26,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://<your-username>.github.io/<your-repo-name>",
+  "homepage": "https://Vagvedi.github.io/Amazon-Clone/",
+
   "eslintConfig": {
     "extends": [
       "react-app",

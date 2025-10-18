@@ -10,7 +10,8 @@ import './App.css';
 function App() {
   return (
     <StateProvider initialState={initialState} reducer={reducer}>
-      <Router>
+      {/* Add basename so GitHub Pages works */}
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="app">
           <Header />
           <Routes>
