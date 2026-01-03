@@ -1,11 +1,350 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=./src/App.js">
-    <title>Amazon Clone</title>
-  </head>
-  <body>
-    <p>If you are not redirected automatically, follow this <a href="./src/App.js">link to the app</a>.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Amazon Clone - Homepage">
+    <title>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="header-top">
+            <div class="header-top-content">
+                <div class="header-logo-container">
+                    <a href="#" class="header-logo-link" aria-label="Amazon Homepage">
+                        <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="Amazon Logo" class="header-logo">
+                    </a>
+                </div>
+
+                <!-- Delivery Location -->
+                <div class="header-option delivery-location">
+                    <span class="header-option-line-one">
+                        <svg class="location-icon" width="14" height="14" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 0C4.1 0 1 3.1 1 7c0 5.2 7 9 7 9s7-3.8 7-9c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S6.6 4.5 8 4.5s2.5 1.1 2.5 2.5S9.4 9.5 8 9.5z" fill="white"/>
+                        </svg>
+                        Deliver to
+                    </span>
+                    <span class="header-option-line-two">India</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="header-search">
+                    <div class="search-category-dropdown">
+                        <select class="search-category-select" aria-label="Search category">
+                            <option>All</option>
+                            <option>Electronics</option>
+                            <option>Books</option>
+                            <option>Clothing</option>
+                            <option>Home & Kitchen</option>
+                            <option>Sports</option>
+                        </select>
+                    </div>
+                    <input type="text" class="search-input" placeholder="Search Amazon" aria-label="Search Amazon">
+                    <button class="search-button" aria-label="Search">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                            <path d="M21.707 20.293l-5.675-5.675a9.5 9.5 0 1 0-1.414 1.414l5.675 5.675a1 1 0 0 0 1.414-1.414zM9.5 17a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" fill="#333"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Header Nav Options -->
+                <div class="header-nav">
+                    <div class="header-option account-menu">
+                        <span class="header-option-line-one">Hello, sign in</span>
+                        <span class="header-option-line-two">Account & Lists</span>
+                    </div>
+
+                    <div class="header-option returns-orders">
+                        <span class="header-option-line-one">Returns</span>
+                        <span class="header-option-line-two">& Orders</span>
+                    </div>
+
+                    <div class="header-option cart-container">
+                        <div class="cart-icon-wrapper">
+                            <svg class="cart-icon" width="38" height="26" viewBox="0 0 38 26" fill="none">
+                                <path d="M7.17 25.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm23.33 0c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM0 0v2.5h4.17l4.5 9.25-1.67 3.04c-.12.22-.19.47-.19.71 0 .83.67 1.5 1.5 1.5h20.83v-2.5H10.33l1.25-2.25h13.04c.67 0 1.25-.38 1.54-.96l4.58-8.33c.08-.14.12-.3.12-.46 0-.55-.45-1-1-1H8.33L6.92 0H0z" fill="white"/>
+                            </svg>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </div>
+                        <span class="cart-text">Cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="header-navbar" aria-label="Main navigation">
+            <div class="navbar-content">
+                <div class="navbar-item all-menu">
+                    <svg class="menu-icon" width="17" height="14" viewBox="0 0 17 14" fill="none">
+                        <rect width="17" height="2" fill="white"/>
+                        <rect y="6" width="17" height="2" fill="white"/>
+                        <rect y="12" width="17" height="2" fill="white"/>
+                    </svg>
+                    <span>All</span>
+                </div>
+                <a href="#" class="navbar-item">Amazon MiniTV</a>
+                <a href="#" class="navbar-item">Sell</a>
+                <a href="#" class="navbar-item">Best Sellers</a>
+                <a href="#" class="navbar-item">Today's Deals</a>
+                <a href="#" class="navbar-item">Customer Service</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Carousel Section -->
+        <section class="hero-section" aria-label="Hero banner carousel">
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active" data-slide="0">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/CEPC/Clearance/May24/GW/3000_Clearance_store_May24._CB1708501702_.jpg" alt="Amazon Clearance Store - Great Deals">
+                    </div>
+                    <div class="carousel-slide" data-slide="1">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Electronics/Jan/BAU/PC_GW_Jan24/3000_MSI_PC_GW_Jan24._CB1705314990_.jpg" alt="MSI Gaming Laptops">
+                    </div>
+                    <div class="carousel-slide" data-slide="2">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Fashion/Event/GW/Jan/2024/Storage_Fashion/PC_Hero_3000._CB1705655983_.jpg" alt="Fashion Deals">
+                    </div>
+                    <div class="carousel-slide" data-slide="3">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Events/2024/JanuaryART/PC/JanART_GW_3000._CB1704884496_.jpg" alt="Home & Kitchen Deals">
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="carousel-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="carousel-dot" data-slide="2" aria-label="Go to slide 3"></button>
+                    <button class="carousel-dot" data-slide="3" aria-label="Go to slide 4"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid Section -->
+        <section class="products-section">
+            <div class="products-container">
+                <!-- Product Row 1 -->
+                <div class="products-row">
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg" alt="The Lean Startup book" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">The Lean Startup: How Constant Innovation Creates Radically Successful Businesses</h3>
+                            <div class="product-rating">
+                                <span class="rating-stars">★★★★★</span>
+                                <span class="rating-count">12,847</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-symbol">$</span>
+                                <span class="price-whole">29</span>
+                                <span class="price-decimal">99</span>
+                            </div>
+                            <button class="product-add-to-cart" aria-label="Add to cart">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg" alt="Kenwood kMix Stand Mixer" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk</h3>
+                            <div class="product-rating">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span class="rating-count">3,421</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-symbol">$</span>
+                                <span class="price-whole">239</span>
+                                <span class="price-decimal">00</span>
+                            </div>
+                            <button class="product-add-to-cart" aria-label="Add to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Product Row 2 -->
+                <div class="products-row">
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg" alt="Samsung 49 inch Curved LED Gaming Monitor" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor</h3>
+                            <div class="product-rating">
+                                <span class="rating-stars">★★★☆☆</span>
+                                <span class="rating-count">892</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-symbol">$</span>
+                                <span class="price-whole">199</span>
+                                <span class="price-decimal">99</span>
+                            </div>
+                            <button class="product-add-to-cart" aria-label="Add to cart">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$" alt="Amazon Echo Smart Speaker with Alexa" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric</h3>
+                            <div class="product-rating">
+                                <span class="rating-stars">★★★★★</span>
+                                <span class="rating-count">45,231</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-symbol">$</span>
+                                <span class="price-whole">98</span>
+                                <span class="price-decimal">99</span>
+                            </div>
+                            <button class="product-add-to-cart" aria-label="Add to cart">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg" alt="Apple iPad Pro 12.9 inch" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)</h3>
+                            <div class="product-rating">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span class="rating-count">8,942</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-symbol">$</span>
+                                <span class="price-whole">598</span>
+                                <span class="price-decimal">99</span>
+                            </div>
+                            <button class="product-add-to-cart" aria-label="Add to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Product Row 3 -->
+                <div class="products-row">
+                    <article class="product-card product-card-wide">
+                        <div class="product-image-container">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg" alt="Samsung Super Ultra Wide Dual WQHD Gaming Monitor" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440</h3>
+                            <div class="product-rating">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span class="rating-count">1,234</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price-symbol">$</span>
+                                <span class="price-whole">1,094</span>
+                                <span class="price-decimal">98</span>
+                            </div>
+                            <button class="product-add-to-cart" aria-label="Add to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-back-to-top">
+            <a href="#" class="back-to-top-link">Back to top</a>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4 class="footer-heading">Get to Know Us</h4>
+                <ul class="footer-list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">Amazon Science</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Connect with Us</h4>
+                <ul class="footer-list">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Make Money with Us</h4>
+                <ul class="footer-list">
+                    <li><a href="#">Sell on Amazon</a></li>
+                    <li><a href="#">Sell under Amazon Accelerator</a></li>
+                    <li><a href="#">Protect and Build Your Brand</a></li>
+                    <li><a href="#">Amazon Global Selling</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Fulfilment by Amazon</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                    <li><a href="#">Amazon Pay on Merchants</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-heading">Let Us Help You</h4>
+                <ul class="footer-list">
+                    <li><a href="#">COVID-19 and Amazon</a></li>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Returns Centre</a></li>
+                    <li><a href="#">100% Purchase Protection</a></li>
+                    <li><a href="#">Amazon App Download</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <span>amazon</span>
+            </div>
+            <div class="footer-location">
+                <span>Australia</span>
+                <span>Brazil</span>
+                <span>Canada</span>
+                <span>China</span>
+                <span>France</span>
+                <span>Germany</span>
+                <span>India</span>
+                <span>Italy</span>
+                <span>Japan</span>
+                <span>Mexico</span>
+                <span>Netherlands</span>
+                <span>Poland</span>
+                <span>Singapore</span>
+                <span>Spain</span>
+                <span>Turkey</span>
+                <span>United Arab Emirates</span>
+                <span>United Kingdom</span>
+                <span>United States</span>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 1996-2024, Amazon.com, Inc. or its affiliates</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
